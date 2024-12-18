@@ -24,8 +24,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {children}
+      <body
+        className={`min-h-screen ${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <div className="grid min-h-screen grid-rows-[50px_auto] gap-4">
+          <div className="col-span-8 grid content-center justify-center border-2 border-white">
+            Search block
+          </div>
+          <div className="col-span-1 grid content-center justify-center border-2 border-white">
+            Sidebar block
+          </div>
+          <div className="col-span-7 grid content-center justify-center border-2 border-white">
+            {children}
+          </div>
+        </div>
       </body>
     </html>
   );
