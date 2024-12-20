@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import { SubmitButton } from '@/ui/SubmitButton';
+import { createContact } from '@/data/actions/createContact';
 import './globals.css';
 
 const geistSans = Geist({
@@ -30,6 +32,9 @@ export default function RootLayout({
         <div className="grid min-h-screen grid-rows-[50px_auto] gap-4">
           <div className="col-span-8 grid content-center justify-center border-2 border-white">
             Search block
+            <form action={createContact}>
+              <SubmitButton label="Add contact" />
+            </form>
           </div>
           <div className="col-span-1 grid content-center justify-center border-2 border-white">
             Sidebar block
