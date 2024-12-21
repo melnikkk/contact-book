@@ -8,7 +8,7 @@ export const createContact = async () => {
   const emptyContact = await prisma.contact.create({ data: {} });
 
   redirect(
-    routes.contactId({
+    routes.editContact({
       contactId: emptyContact.id,
     }),
   );
