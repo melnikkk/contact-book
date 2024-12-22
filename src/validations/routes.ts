@@ -8,4 +8,9 @@ export const { routes } = createNavigationConfig((defineRoute) => ({
       contactId: z.string().default(''),
     }),
   }),
+  editContact: defineRoute('/contacts/[contactId]/edit', {
+    params: z.object({
+      contactId: z.string().default(''),
+    }),
+  }),
 }));
