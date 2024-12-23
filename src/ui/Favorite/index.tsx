@@ -7,7 +7,7 @@ interface Props {
 export const Favorite: FC<Props> = ({ favorite }) => {
   return (
     <button
-      className={`${favorite ? 'text-yellow-500' : 'text-gray-500'} text-lg hover:text-yellow-400`}
+      className={`${favorite ? 'text-yellow-500' : 'text-gray-500'} flex h-2 hover:text-yellow-400`}
     >
       {favorite ? '★' : '☆'}
     </button>
