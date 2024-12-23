@@ -34,13 +34,13 @@ export default async function RootLayout({
       <body
         className={`min-h-screen ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="grid h-screen grid-rows-[50px_auto] gap-4">
+        <div className="grid h-screen grid-cols-[200px_auto] grid-rows-[50px_auto] gap-4">
           <div className="col-span-8 grid content-center justify-center border-2 border-white">
             <form action={createContact}>
               <SubmitButton label="Add contact" />
             </form>
           </div>
-          <div className="col-span-1 grid justify-center overflow-scroll border-2 border-white p-6">
+          <div className="overflow-scroll border-2 border-white p-6">
             <ContactsList contacts={contacts} />
           </div>
           <div className="col-span-7 grid content-center justify-center border-2 border-white">
