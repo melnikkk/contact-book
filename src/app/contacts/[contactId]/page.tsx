@@ -2,9 +2,9 @@ import { notFound } from 'next/navigation';
 import { getContact } from '@/data/service/getContact';
 import { getContactFullName } from '@/utils/contact';
 import { Favorite } from '@/ui/Favorite';
-import { Button } from '@/ui/Button';
 import { deleteContact } from '@/data/actions/deleteContact';
 import { DeleteButton } from './_components/DeleteButton';
+import { EditButton } from '@/app/contacts/[contactId]/_components/EditButton';
 
 export default async function ContactPage({
   params,
@@ -52,7 +52,7 @@ export default async function ContactPage({
       ) : null}
 
       <div className="mt-6 flex justify-between">
-        <Button>Edit</Button>
+        <EditButton contactId={contactId} />
         <DeleteButton onClick={onDeleteClick} />
       </div>
     </div>
