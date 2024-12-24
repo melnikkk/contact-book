@@ -2,6 +2,9 @@ import { notFound } from 'next/navigation';
 import { getContact } from '@/data/service/getContact';
 import { getContactFullName } from '@/utils/contact';
 import { Favorite } from '@/ui/Favorite';
+import { Button } from '@/ui/Button';
+import { deleteContact } from '@/data/actions/deleteContact';
+import { DeleteButton } from './_components/DeleteButton';
 
 export default async function ContactPage({
   params,
@@ -11,6 +14,12 @@ export default async function ContactPage({
   const contactId = (await params).contactId;
   const contact = await getContact(contactId);
   const contactFullName = getContactFullName(contact.first_name, contact.last_name);
+
+  const onDeleteClick = async () => {
+    'use server';
+
+    await deleteContact(contactId);
+  };
 
   if (!contactId) {
     notFound();
@@ -22,6 +31,7 @@ export default async function ContactPage({
         <span className="mr-2">{contactFullName}</span>
         <Favorite favorite={contact.favorite} />
       </h1>
+
       {contact.email ? (
         <p className="mb-1">
           <span className="font-bold">Email:</span> {contact.email}
@@ -40,6 +50,11 @@ export default async function ContactPage({
           </a>
         </p>
       ) : null}
+
+      <div className="mt-6 flex justify-between">
+        <Button>Edit</Button>
+        <DeleteButton onClick={onDeleteClick} />
+      </div>
     </div>
   );
 }

@@ -1,3 +1,3 @@
 export default function ContactsPage() {
-  return <div>Contacts</div>;
+  return <div>Select the contact from the list</div>;
 }
