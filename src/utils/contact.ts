@@ -1,4 +1,4 @@
-// TODO: provide contact type amd mapper
+// TODO: provide contact type and mapper
 export const getContactFullName = (
   firstName: string | null,
   lastName: string | null,

@@ -31,9 +31,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        className={`min-h-screen ${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}>
         <div className="grid h-screen grid-cols-[250px_auto] grid-rows-[50px_auto] gap-2">
           <header className="col-span-8 grid content-center justify-end border-2 border-white p-4">
             <form action={createContact}>
@@ -43,7 +41,7 @@ export default async function RootLayout({
           <div className="overflow-scroll border-2 border-white p-6">
             <ContactsList contacts={contacts} />
           </div>
-          <div className="col-span-7 grid content-center justify-center border-2 border-white">
+          <div className="col-span-7 grid w-full content-center justify-center border-2 border-white">
             {children}
           </div>
         </div>

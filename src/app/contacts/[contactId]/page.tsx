@@ -3,8 +3,8 @@ import { getContact } from '@/data/service/getContact';
 import { getContactFullName } from '@/utils/contact';
 import { Favorite } from '@/ui/Favorite';
 import { deleteContact } from '@/data/actions/deleteContact';
-import { DeleteButton } from './_components/DeleteButton';
 import { EditButton } from '@/app/contacts/[contactId]/_components/EditButton';
+import { DeleteButton } from './_components/DeleteButton';
 
 export default async function ContactPage({
   params,
@@ -26,7 +26,7 @@ export default async function ContactPage({
   }
 
   return (
-    <div className="flex min-w-52 w-full flex-col">
+    <div className="flex min-w-52 flex-col">
       <h1 className="mb-2 flex justify-center text-xl font-bold">
         <span className="mr-2">{contactFullName}</span>
         <Favorite id={contact.id} favorite={contact.favorite} />
