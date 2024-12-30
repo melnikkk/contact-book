@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 export default function Home() {
-  return <div>Home</div>;
+  return <h1 className="text-2xl font-bold">The Book of Contacts</h1>;
 }

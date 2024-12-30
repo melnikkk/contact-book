@@ -28,7 +28,7 @@ export const Favorite: FC<Props> = ({ id, favorite, isDisabled = false }) => {
   return (
     <button
       disabled={isDisabled}
-      className={`${optimisticFavorite ? 'text-yellow-500' : 'text-gray-500'} flex h-2 ${!isDisabled ? 'hover:text-yellow-400' : ''}`}
+      className={`${optimisticFavorite ? 'text-yellow-500' : 'text-gray-500'} ${!isDisabled ? 'hover:text-yellow-400' : ''}`}
       onClick={onClick}
     >
       {optimisticFavorite ? '★' : '☆'}

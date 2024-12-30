@@ -15,7 +15,9 @@ export const EditContactForm: FC<Props> = async ({ contactId }) => {
   return (
     <form action={editContact.bind(null, contactId)}>
       <div className="mb-4 flex justify-between">
-        <label htmlFor="first_name">First name</label>
+        <label className="mr-4" htmlFor="first_name">
+          First name
+        </label>
         <Input
           name="first_name"
           placeholder="First name"
@@ -24,7 +26,9 @@ export const EditContactForm: FC<Props> = async ({ contactId }) => {
       </div>
 
       <div className="mb-4 flex justify-between">
-        <label htmlFor="last_name">Last name</label>
+        <label className="mr-4" htmlFor="last_name">
+          Last name
+        </label>
         <Input
           name="last_name"
           placeholder="Last name"
@@ -33,7 +37,9 @@ export const EditContactForm: FC<Props> = async ({ contactId }) => {
       </div>
 
       <div className="mb-4 flex justify-between">
-        <label htmlFor="email">Email</label>
+        <label className="mr-4" htmlFor="email">
+          Email
+        </label>
         <Input
           name="email"
           placeholder="Email"
@@ -43,7 +49,9 @@ export const EditContactForm: FC<Props> = async ({ contactId }) => {
       </div>
 
       <div className="mb-4 flex justify-between">
-        <label htmlFor="phone_number">Phone</label>
+        <label className="mr-4" htmlFor="phone_number">
+          Phone
+        </label>
         <Input
           name="phone_number"
           placeholder="Phone"
@@ -53,7 +61,9 @@ export const EditContactForm: FC<Props> = async ({ contactId }) => {
       </div>
 
       <div className="mb-10 flex justify-between">
-        <label htmlFor="web_link">Link</label>
+        <label className="mr-4" htmlFor="web_link">
+          Link
+        </label>
         <Input
           name="web_link"
           placeholder="Link"
