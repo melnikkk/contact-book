@@ -1,4 +1,4 @@
-import { notFound, redirect } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import { getContact } from '@/data/service/getContact';
 import { getContactFullName } from '@/utils/contact';
 import { Favorite } from '@/ui/Favorite';
@@ -26,7 +26,7 @@ export default async function ContactPage({
   }
 
   return (
-    <div className="flex w-full flex-col">
+    <div className="flex min-w-52 w-full flex-col">
       <h1 className="mb-2 flex justify-center text-xl font-bold">
         <span className="mr-2">{contactFullName}</span>
         <Favorite id={contact.id} favorite={contact.favorite} />

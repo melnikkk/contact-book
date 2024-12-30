@@ -21,8 +21,13 @@ export const Contact: FC<Props> = ({ id, firstName, lastName, favorite }) => {
   };
 
   return (
-    <div className="mb-2 flex cursor-pointer justify-between" onClick={onContactClick}>
-      <button className="mr-2">{contactName ? contactName : 'No name'}</button>
+    <div
+      className="mb-2 flex cursor-pointer content-center justify-between"
+      onClick={onContactClick}
+    >
+      <button className="mr-2 w-full rounded p-1 hover:bg-white hover:text-black">
+        {contactName ? contactName : 'No name'}
+      </button>
       <Favorite id={id} favorite={favorite} isDisabled />
     </div>
   );
