@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { getContact } from '@/data/service/getContact';
 import { editContact } from '@/data/actions/editContact';
 import { Input } from '@/ui/Input';
-import { Button } from '@/ui/Button';
+import { SubmitButton } from '@/ui/SubmitButton';
 import { LinkButton } from '@/ui/LinkButton';
 
 interface Props {
@@ -74,9 +74,7 @@ export const EditContactForm: FC<Props> = async ({ contactId }) => {
 
       <div className="flex justify-between">
         <LinkButton href={`/contacts/${contactId}`}>Cancel</LinkButton>
-        <Button className="rounded p-1 hover:bg-white hover:text-black" type="submit">
-          Save
-        </Button>
+        <SubmitButton label="Save" />
       </div>
     </form>
   );

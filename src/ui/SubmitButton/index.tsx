@@ -12,7 +12,7 @@ export const SubmitButton: FC<Props> = ({ label, ...otherProps }) => {
   const { pending } = useFormStatus();
 
   return (
-    <Button type="submit" disabled={pending} {...otherProps}>
+    <Button type="submit" disabled={pending} loading={pending} {...otherProps}>
       {label}
     </Button>
   );
