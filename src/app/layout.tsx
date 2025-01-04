@@ -1,11 +1,12 @@
+import './globals.css';
 import React from 'react';
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { SubmitButton } from '@/ui/SubmitButton';
 import { createContact } from '@/data/actions/createContact';
-import './globals.css';
 import { ContactsList } from '@/app/_components/ContactsList';
 import { getContacts } from '@/data/service/getContacts';
+import { LogoutButton } from '@/app/_components/LogoutButton';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
