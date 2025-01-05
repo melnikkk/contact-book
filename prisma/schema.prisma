@@ -11,13 +11,19 @@ datasource db {
 }
 
 model Contact {
-  id String @id @default(uuid())
-  first_name String?
-  last_name String?
-  email String?
+  id           String   @id @default(uuid())
+  first_name   String?
+  last_name    String?
+  email        String?
   phone_number String?
-  web_link String?
-  favorite Boolean @default(false)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  web_link     String?
+  favorite     Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model User {
+  id       String @id @default(uuid())
+  email    String @unique
+  password String
 }

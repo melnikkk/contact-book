@@ -12,6 +12,4 @@ export const createContact = async () => {
       contactId: emptyContact.id,
     }),
   );
-
-  // redirect(`/contacts/${emptyContact.id}`);
 };
