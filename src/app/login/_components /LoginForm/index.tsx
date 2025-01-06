@@ -1,15 +1,16 @@
 'use client';
+
 import { useActionState } from 'react';
-import { signUp } from '@/data/actions/signUp';
 import { Input } from '@/ui/Input';
 import { FormFieldError } from '@/ui/FormFieldError';
 import { Button } from '@/ui/Button';
 import { SubmitButton } from '@/ui/SubmitButton';
 import { redirect } from 'next/navigation';
 import { routes } from '@/validations/routes';
+import { login } from '@/data/actions/login';
 
-export const SignUpForm = () => {
-  const [formState, action, pending] = useActionState(signUp, undefined);
+export const LoginForm = () => {
+  const [formState, action, pending] = useActionState(login, undefined);
 
   const onCancelClick = () => {
     redirect(routes.home());
@@ -50,24 +51,12 @@ export const SignUpForm = () => {
             disabled={pending}
             errored={Boolean(formState?.errors?.password)}
           />
-          {formState?.errors?.password && (
-            <div>
-              <FormFieldError errorMessage="Password must:" />
-              <ul>
-                {formState.errors.password.map((error) => (
-                  <li key={error}>
-                    <FormFieldError errorMessage={`- ${error}`} />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
         </div>
       </div>
 
       <div className="flex justify-between">
         <Button onClick={onCancelClick}>Cancel</Button>
-        <SubmitButton label="Sign Up" />
+        <SubmitButton label="Login" />
       </div>
     </form>
   );

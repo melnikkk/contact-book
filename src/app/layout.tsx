@@ -4,8 +4,8 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import { SubmitButton } from '@/ui/SubmitButton';
 import { createContact } from '@/data/actions/createContact';
-import { ContactsList } from '@/app/_components/ContactsList';
 import { getContacts } from '@/data/service/getContacts';
+import { ContactsList } from '@/app/_components/ContactsList';
 import { LogoutButton } from '@/app/_components/LogoutButton';
 
 const geistSans = Geist({
@@ -34,10 +34,13 @@ export default async function RootLayout({
     <html lang="en">
       <body className={`min-h-screen ${geistSans.variable} ${geistMono.variable}`}>
         <div className="grid h-screen grid-cols-[250px_auto] grid-rows-[50px_auto] gap-2">
-          <header className="col-span-8 grid content-center justify-end border-2 border-white p-4">
-            <form action={createContact}>
-              <SubmitButton label="Add contact" />
-            </form>
+          <header className="col-span-8 grid content-center border-2 border-white p-4">
+            <div className="flex justify-between">
+              <form action={createContact}>
+                <SubmitButton label="Add contact" />
+              </form>
+              <LogoutButton />
+            </div>
           </header>
           <div className="overflow-scroll border-2 border-white p-6">
             <ContactsList contacts={contacts} />

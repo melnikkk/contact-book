@@ -14,4 +14,6 @@ export const { routes } = createNavigationConfig((defineRoute) => ({
     }),
   }),
   contacts: defineRoute('/contacts'),
+  signup: defineRoute('/signup'),
+  login: defineRoute('/login'),
 }));

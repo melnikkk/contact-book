@@ -7,7 +7,7 @@ import { createSession } from '@/utils/session';
 import { redirect } from 'next/navigation';
 import { routes } from '@/validations/routes';
 
-export const signUp = async (state: SignUpFormState, formData: FormData) => {
+export const signUp = async (_state: SignUpFormState, formData: FormData) => {
   const validatedForm = SignUpFormSchema.safeParse({
     email: formData.get('email'),
     password: formData.get('password'),
