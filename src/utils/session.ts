@@ -14,15 +14,11 @@ export const encrypt = async (payload: JWTPayload) => {
 };
 
 export const decrypt = async (session: string | undefined = '') => {
-  try {
-    const { payload } = await jwtVerify(session, encodedKey, {
-      algorithms: ['HS256'],
-    });
+  const { payload } = await jwtVerify(session, encodedKey, {
+    algorithms: ['HS256'],
+  });
 
-    return payload;
-  } catch (e) {
-    console.error('Failed to verify session');
-  }
+  return payload;
 };
 
 export const createSession = async (userId: string) => {
