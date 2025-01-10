@@ -8,6 +8,7 @@ import { SubmitButton } from '@/ui/SubmitButton';
 import { redirect } from 'next/navigation';
 import { routes } from '@/validations/routes';
 import { login } from '@/data/actions/login';
+import { LoginFormCaption } from '@/app/login/_components /LoginFormCaption';
 
 export const LoginForm = () => {
   const [formState, action, pending] = useActionState(login, undefined);
@@ -58,6 +59,8 @@ export const LoginForm = () => {
         <Button onClick={onCancelClick}>Cancel</Button>
         <SubmitButton label="Login" />
       </div>
+
+      <LoginFormCaption />
     </form>
   );
 };
